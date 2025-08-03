@@ -1,50 +1,68 @@
-# Welcome to your Expo app 👋
+🚀 LifeQuest
+Transforme a sua lista de afazeres numa jornada épica de produtividade e crescimento pessoal!
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+LifeQuest é um aplicativo móvel de lista de tarefas gamificado que o ajuda a organizar as suas tarefas diárias e semanais, ao mesmo tempo que o recompensa com pontos de experiência (XP) e níveis à medida que as conclui. Deixe a monotonia das listas tradicionais para trás e embarque numa aventura para conquistar os seus objetivos!
 
-## Get started
+✨ Funcionalidades Principais
+Gestão de Tarefas Completa: Adicione, marque como concluída e elimine tarefas de forma intuitiva.
 
-1. Install dependencies
+Gamificação Integrada:
 
-   ```bash
-   npm install
-   ```
+Pontos de Experiência (XP): Ganhe XP ao concluir tarefas.
 
-2. Start the app
+Sistema de Níveis: Suba de nível à medida que acumula XP, desbloqueando a sua progressão pessoal.
 
-   ```bash
-   npx expo start
-   ```
+Dificuldade da Tarefa: Atribua um nível de dificuldade (Fácil, Médio, Difícil, Épico) a cada tarefa, que influencia o XP ganho.
 
-In the output, you'll find options to open the app in a
+Feedback Visual de XP: Receba uma animação imediata de XP ganho ao concluir tarefas.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Organização Semanal: Agende tarefas para dias e horários específicos da semana, visualizando a sua agenda de forma clara.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Persistência de Dados (Armazenamento Local): O seu progresso, tarefas, XP e nível são guardados localmente no seu dispositivo, garantindo que nunca perde o seu avanço.
 
-## Get a fresh project
+Design Moderno e Interativo: Uma interface de utilizador (UI) limpa e responsiva, com animações subtis para uma experiência agradável em dispositivos móveis.
 
-When you're ready, run:
+🛠️ Tecnologias Utilizadas
+Front-end (Mobile):
 
-```bash
-npm run reset-project
-```
+React Native: Framework para construir aplicações móveis nativas usando React.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+@react-native-picker/picker: Componente para seletores de lista suspensa (dropdowns).
 
-## Learn more
+@react-native-community/datetimepicker: Componente para seletores de data e hora nativos.
 
-To learn more about developing your project with Expo, look at the following resources:
+@react-native-async-storage/async-storage (Recomendado para persistência local): Para armazenar dados de forma assíncrona e persistente no dispositivo.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+🚀 Como Usar
+Adicionar uma Tarefa:
 
-## Join the community
+Escreva o nome da tarefa no campo de texto.
 
-Join our community of developers creating universal apps.
+Selecione a Data de Vencimento e a Hora (opcional) usando os seletores nativos.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Escolha o Nível de Dificuldade (Fácil, Médio, Difícil, Épico) no seletor.
+
+Toque em "Adicionar Tarefa".
+
+Marcar como Concluída:
+
+Toque na caixa de seleção ao lado de uma tarefa para a marcar como concluída e ganhar XP!
+
+Eliminar Tarefa:
+
+Toque no ícone do caixote do lixo para remover uma tarefa.
+
+Acompanhar o Progresso:
+
+Acompanhe o seu XP e Nível na secção superior do aplicativo.
+
+💡 Melhorias Futuras
+Conquistas e Recompensas: Implementar um sistema de conquistas (achievements) e uma loja onde os utilizadores possam gastar uma "moeda do jogo" ganha ao completar tarefas.
+
+Personalização: Temas visuais, avatares para o utilizador.
+
+Desafios Diários/Semanais: Introduzir desafios que concedam bónus de XP.
+
+Integração com Calendários Nativos: Sincronização com o calendário do dispositivo.
+
+LifeQuest - A sua jornada para uma vida mais organizada e recompensadora!
