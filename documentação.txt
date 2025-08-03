@@ -1,0 +1,85 @@
+Estrutura do Aplicativo LifeQuest com Novas Funcionalidades
+Para incorporar as suas ideias, precisaremos ajustar a forma como as tarefas são armazenadas e apresentadas, bem como a lógica de cálculo de XP.
+
+1. Estrutura de Dados (Firestore)
+A estrutura de cada documento de tarefa na sua coleção tasks precisaria ser expandida para incluir os novos campos:
+
+text: (String) O texto principal da tarefa (já existe).
+
+completed: (Booleano) Indica se a tarefa foi concluída (já existe).
+
+xpValue: (Número) O valor de XP que a tarefa concede (já existe, mas será calculado dinamicamente).
+
+createdAt: (Timestamp) Data e hora de criação da tarefa (já existe).
+
+dueDate: (Timestamp) A data específica em que a tarefa deve ser realizada. Isso permitirá agrupá-las por dia da semana.
+
+time: (String) O horário específico para a tarefa (ex: "09:00", "14:30"). Pode ser opcional.
+
+difficulty: (String) O nível de dificuldade da tarefa, que determinará o xpValue. Ex: "Fácil", "Médio", "Difícil", "Épico".
+
+Exemplo de um documento de tarefa atualizado:
+
+{
+  "text": "Preparar apresentação para a reunião",
+  "completed": false,
+  "xpValue": 25, // Calculado com base na dificuldade
+  "createdAt": "Timestamp do Firebase",
+  "dueDate": "Timestamp do Firebase para 2025-08-04",
+  "time": "10:00",
+  "difficulty": "Médio"
+}
+
+2. Alterações na Interface do Utilizador (UI)
+Formulário de Adição de Tarefas:
+O formulário para adicionar novas tarefas precisaria de campos adicionais:
+
+Campo de Texto: Para o nome da tarefa.
+
+Seletor de Data (dueDate): Um calendário ou seletor de data para escolher o dia da semana (ou qualquer dia) em que a tarefa deve ser feita.
+
+Seletor de Hora (time): Um seletor de hora para definir o horário específico da tarefa.
+
+Dropdown de Dificuldade (difficulty): Um menu suspenso com opções como "Fácil", "Médio", "Difícil", "Épico".
+
+Visualização das Tarefas:
+A lista de tarefas seria transformada numa visualização semanal, onde as tarefas são agrupadas por dia.
+
+Cabeçalhos de Dias: Cada dia da semana (Segunda, Terça, etc.) teria um cabeçalho.
+
+Tarefas por Dia: Abaixo de cada cabeçalho, seriam listadas todas as tarefas agendadas para aquele dia.
+
+Horário da Tarefa: O horário (time) seria exibido junto ao nome da tarefa para facilitar a organização diária.
+
+Indicador de Dificuldade: Um pequeno ícone ou cor ao lado de cada tarefa poderia indicar a sua dificuldade (ex: um cristal verde para Fácil, amarelo para Médio, vermelho para Difícil).
+
+Múltiplas Tarefas no Mesmo Dia: O sistema suportaria e exibiria várias tarefas sob o mesmo dia, ordenadas pelo horário, se definido, ou pela ordem de criação.
+
+3. Lógica de Gamificação
+Cálculo de XP Baseado na Dificuldade:
+A lógica de cálculo de XP seria ajustada para considerar o novo campo difficulty.
+
+Quando uma tarefa é criada, o xpValue seria definido com base na difficulty selecionada.
+
+Fácil: 10 XP
+
+Médio: 25 XP
+
+Difícil: 50 XP
+
+Épico: 100 XP (ou mais, para tarefas muito grandes ou importantes)
+
+Quando a tarefa é concluída, o xpValue correspondente seria adicionado ao XP total do utilizador, como já acontece.
+
+Conquistas (Futuro):
+Com a dificuldade, poderiam ser adicionadas conquistas específicas:
+
+"Mestre Fácil": Concluir 50 tarefas fáceis.
+
+"Desafiador": Concluir 10 tarefas difíceis.
+
+"Lenda Épica": Concluir 3 tarefas épicas.
+
+Esta estrutura permitiria ao seu aplicativo "LifeQuest" oferecer um controlo muito mais granular sobre as tarefas, ao mesmo tempo que aprofunda a experiência gamificada, recompensando o utilizador de forma mais significativa pela dificuldade dos seus afazeres.
+
+Se esta estrutura faz sentido para si, posso ajudá-lo a começar a implementar estas mudanças no código. O que pensa?
